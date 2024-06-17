@@ -13,7 +13,7 @@ Student::Student(string studentID,
     int daysInCourse3,
     int degreeProgram) {
     v_Age = age;
-    v_DaysToComplete = { daysInCourse1, daysInCourse2, daysInCourse3 };
+    int v_DaysToComplete[3] = {daysInCourse1, daysInCourse2, daysInCourse3};
     v_Email = emailAddress;
     v_FirstName = firstName;
     v_LastName = lastName;
@@ -43,8 +43,8 @@ int Student::getAge() {
     return v_Age;
 }
 
-array<int, 3> Student::getDaysToComplete() {
-    return v_DaysToComplete;
+int* Student::GetDaysToCompleteCourse() {
+    return daysToCompleteCourse;
 }
 
 int Student::getDegree() {
@@ -72,8 +72,11 @@ void Student::setAge(int age) {
     v_Age = age;
 }
 
-void Student::setDaysToComplete(array<int, 3> daysToComplete) {
-    v_DaysToComplete = daysToComplete;
+void Student::SetDaysToCompleteCourse(int* newDaysToCompleteCourse)
+{
+    for (int i = 0; i < SIZE; i++) {
+        daysToCompleteCourse[i] = newDaysToCompleteCourse[i];
+    }
 }
 
 void Student::setDegree(int degree) {
