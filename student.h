@@ -12,9 +12,9 @@ private:
     string v_LastName;
     string v_Email;
     int v_Age;
-    array<int, 3> v_DaysToComplete;
+    int daysToCompleteCourse[3];
     int v_Degree;
-    
+
 public:
     Student(string studentID,
         string firstName,
@@ -25,6 +25,7 @@ public:
         int daysInCourse2,
         int daysInCourse3,
         int degreeProgram);
+    static const int SIZE = 3;
     //public data
     //the getters
     string getStudentID();
@@ -32,7 +33,7 @@ public:
     string getLastName();
     string getEmail();
     int getAge();
-    array<int, 3> getDaysToComplete();
+    int* GetDaysToCompleteCourse();
     int getDegree();
 
     //the setters
@@ -41,7 +42,7 @@ public:
     void setLastName(string lastName);
     void setEmail(string email);
     void setAge(int age);
-    void setDaysToComplete(array<int, 3> daysToComplete);
+    void SetDaysToCompleteCourse(int* daysToCompleteCourse);
     void setDegree(int degree);
 
     //print out
